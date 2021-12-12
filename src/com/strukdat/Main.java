@@ -11,7 +11,7 @@ class Node{
     }
 }
 
-class BinarySearchTree{
+class BinaryTree{
     Node root;
 
     private Node insert(Node current, String value){
@@ -61,20 +61,20 @@ class BinarySearchTree{
 public class Main {
 
     public static void main(String[] args) {
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        BinaryTree binaryTree = new BinaryTree();
         Scanner scanner = new Scanner(System.in);
         System.out.print("tentukan jumlah data : ");
         int jumlahData = scanner.nextInt();
         for (int i = 0; i < jumlahData; i++) {
             System.out.print("masukan elemen : ");
             String value = scanner.next();
-            binarySearchTree.add(value);
+            binaryTree.add(value);
         }
         System.out.println("post order");
-        binarySearchTree.postOrder(binarySearchTree.root);
+        binaryTree.postOrder(binaryTree.root);
         System.out.println("pre order");
-        binarySearchTree.preOrder(binarySearchTree.root);
+        binaryTree.preOrder(binaryTree.root);
         System.out.println("in order");
-        binarySearchTree.inOrder(binarySearchTree.root);
+        binaryTree.inOrder(binaryTree.root);
     }
 }
