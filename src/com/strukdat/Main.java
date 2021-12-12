@@ -14,14 +14,14 @@ class Node{
 class BinarySearchTree{
     Node root;
 
-    private Node addRecursive(Node current, String value){
+    private Node insert(Node current, String value){
         if (current == null){
             return new Node(value);
         }
         if (value.compareTo(current.value) < 0){
-            current.left = addRecursive(current.left, value);
+            current.left = insert(current.left, value);
         }else if(value.compareTo(current.value) > 0){
-            current.right = addRecursive(current.right, value);
+            current.right = insert(current.right, value);
         }else {
             return current;
         }
@@ -29,7 +29,7 @@ class BinarySearchTree{
     }
 
     public void add(String value) {
-        root = addRecursive(root,value);
+        root = insert(root,value);
     }
 
     public void inOrder(Node node) {
